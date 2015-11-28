@@ -1,0 +1,14 @@
+{
+  "name": "cherry-card",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "private": true,
+  "dependencies": {
+    "jquery": "~2.1.4"
+  }
+}
