@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no">
+    <title>CHERRY-CARD</title>
+    <script src="{{ url_for('static', filename='components/jquery/dist/jquery.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='components/bootstrap/dist/js/bootstrap.min.js') }}"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='components/bootstrap/dist/css/bootstrap.min.css') }}">
+</head>
+<body>
+  <div class="container">
+    <nav>
+      {% block nav %}
+      {% endblock %}
+    </nav>
+    <section>
+      {% block section %}
+      {% endblock %}
+    </section>
+  </div>
+</body>
+</html>
