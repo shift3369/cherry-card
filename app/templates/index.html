@@ -1,4 +1,23 @@
 {% extends 'base-with-toolbar.html' %}
 {% block section %}
-  Hello World!
+  <div id="index">
+    <div class="banner-list">
+      {% for banner in banners %}
+        <div class="banner row">
+          <div class="background-wrapper">
+            <img src="{{ banner.image.url }}" class="background">
+            <img src="{{ url_for('static', filename='images/banner-overlay.png') }}" class="overlay">
+          </div>
+          <div class="content-wrapper">
+            <div class="label">
+              {{ banner.label }}
+            </div>
+            <div class="content">
+              {{ banner.content|replace('\n', '<br>'|safe) }}
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
 {% endblock %}
