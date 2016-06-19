@@ -1,0 +1,40 @@
+{% extends 'recommendation/base.html' %}
+{% block step %}
+  2
+{% endblock %}
+{% block message %}
+  월 평균 이용 대금은 얼마 정도 인가요?
+{% endblock %}
+{% block hint %}
+  탭하여 이용 대금 기준을 설정해보세요.
+{% endblock %}
+{% block content %}
+  <div id="recommendation-benefit-monthly-total-usage">
+    <div class="money-wrapper row">
+      <div class="col-xs-12">
+        월 <div class="money"></div> 원
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-12">
+        <input class="money-picker" type="range" name="ff" value="100000" min="100000" max="5000000" step="10000">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-6 text-left">
+        10만원
+      </div>
+      <div class="col-xs-6 text-right">
+        500만원
+      </div>
+    </div>
+  </div>
+  <script>
+    $(function () {
+      var $recommendation = $('#recommendation-benefit-monthly-total-usage');
+      $recommendation.find('.money-picker').on('input', function () {
+        $recommendation.find('.money').text($(this).val().replace(/\B(?=(\d{3})+(?!\d))/g, ","));
+      }).trigger('input');
+    });
+  </script>
+{% endblock %}

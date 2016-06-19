@@ -1,0 +1,32 @@
+{% extends 'base-with-toolbar.html' %}
+{% block section %}
+  <div id="recommendation">
+    <div class="top">
+      <div class="step-list">
+        {% for i in range(5) -%}
+          <div class="step"><div class="step-indicator"></div></div>
+        {%- endfor %}
+      </div>
+      <div class="message-wrapper">
+        <div class="message">
+          {% block message %}
+          {% endblock %}
+        </div>
+        <div class="hint">
+          {% block hint %}
+          {% endblock %}
+        </div>
+      </div>
+    </div>
+    {% block content %}
+    {% endblock %}
+  </div>
+  <script>
+    $(function () {
+      var step = {% block step %} undefined {% endblock %};
+      if (step !== undefined) {
+        $('#recommendation').find('.step-list .step').slice(0, step).addClass('active');
+      }
+    });
+  </script>
+{% endblock %}

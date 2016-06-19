@@ -32,6 +32,8 @@ db = SQLAlchemy(app)
 db.create_all()
 
 
+from .recommendation import recommendation  # noqa
 from .routes import app as root  # noqa
 
+app.register_blueprint(recommendation)
 app.register_blueprint(root)

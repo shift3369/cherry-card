@@ -1,0 +1,28 @@
+{% extends 'recommendation/base.html' %}
+{% block step %}
+  1
+{% endblock %}
+{% block message %}
+  어떤 방법으로 카드 추천을 받아볼까요?
+{% endblock %}
+{% block hint %}
+  두가지 방법 중 하나를 선택해주세요.
+{% endblock %}
+{% block content %}
+  <div id="recommendation-select-method" class="row">
+    <div class="method-list">
+      <a href="{{ url_for('.usage_pattern') }}" class="method">
+        <div class="wrapper">
+          <img class="icon" src="{{ url_for('static', filename='images/method-usage-pattern.png') }}">
+          <div class="name">소비유형별</div>
+        </div>
+      </a>
+      <a href="{{ url_for('.benefit') }}" class="method">
+        <div class="wrapper">
+          <img class="icon" src="{{ url_for('static', filename='images/method-benefit.png') }}">
+          <div class="name">혜택별</div>
+        </div>
+      </a>
+    </div>
+  </div>
+{% endblock %}

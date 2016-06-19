@@ -59,3 +59,104 @@ html, body {
     }
   }
 }
+
+#recommendation {
+  .top {
+    padding: 38px 0;
+    .step-list {
+      text-align: center;
+      margin-bottom: 50px;
+      .step {
+        display: inline-block;
+        &:not(:first-child):before, &:not(:last-child):after {
+          display: inline-block;
+          vertical-align: middle;
+          margin-left: -1px;
+          margin-right: -1px;
+          width: 11px;
+          height: 1px;
+          background: $gray3;
+          content: ' ';
+        }
+        .step-indicator {
+          display: inline-block;
+          width: 10px;
+          height: 10px;
+          border-radius: 5px;
+          background: $gray3;
+        }
+        &.active {
+          &:before {
+            margin-left: -12px;
+            width: 22px;
+            background: $piont;
+          }
+          &:after {
+            background: linear-gradient(90deg, $piont, $gray3);
+          }
+          .step-indicator {
+            background: $piont;
+          }
+        }
+      }
+    }
+    .message-wrapper {
+      text-align: center;
+      .message {
+        font-size: 1em;
+        font-weight: bold;
+        color: $black;
+      }
+      .hint {
+        font-size: 0.875em;
+        font-weight: lighter;
+        color: $gray1;
+      }
+    }
+  }
+}
+
+#recommendation-select-method {
+  background: $gray4;
+  padding: 15px;
+  .method-list {
+    .method {
+      display: table;
+      text-align: center;
+      background: $white;
+      width: 100%;
+      height: 200px;
+      &:not(:last-child) {
+        margin-bottom: 15px;
+      }
+      .wrapper {
+        display: table-cell;
+        vertical-align: middle;
+        .icon {
+          width: 106px;
+          height: 106px;
+          margin-bottom: 10px;
+        }
+        .name {
+          color: $gray2;
+        }
+      }
+    }
+  }
+}
+
+#recommendation-benefit-monthly-total-usage {
+  padding: 0px 30px;
+  .money-wrapper {
+    text-align: center;
+    font-size: 1.25em;
+    color: $black;
+    margin-bottom: 30px;
+    .money {
+      display: inline-block;
+      margin-left: 20px;
+      font-size: 1.375em;
+      color: $piont;
+    }
+  }
+}
