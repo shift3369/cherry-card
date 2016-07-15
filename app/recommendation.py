@@ -178,6 +178,8 @@ def recommendation_result():
             filename = secure_filename(file.filename)
             file.save(os.path.join('./', filename))
             recommendation_cards = parse(filename)
+            for card in cards:
+                card['benefits'] = [key for key in card.keys() if key not in ('image', 'name', 'money')]
             return render_template('recommendation/result/recommendation-result2.html', recommendation_cards=recommendation_cards)
 
 

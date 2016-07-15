@@ -8,7 +8,6 @@
       {% for card in recommendation_cards %}
       <div class="item">
          <img src="{{ card.image.url }}" height=210px>
-         <div class="hashtag">{{ card.hashtag }}</div>
       </div>
       {% endfor %}
    </div>
@@ -17,17 +16,16 @@
       <div class="benefit-detail">
          <div class="total-benefit">
             <b>[ {{ card.name }} ]</b>를 통해<br>
-            월 받을 수 있는 혜택은 {{ card.total_benefit }}원 입니다
+            월 받을 수 있는 혜택은 {{ card.money/12 }}원 입니다
          </div>
          <div class="category-list"i>
          {% for item in card.benefits %}
            <div class="col-xs-4 text-center category">
               <div class="category-wrapper">
                  <img src="/static/images/method-benefit.png" width=37px height=37px>
-                 <div class="name">{{ item.benefit }}</div>
+                 <div class="name">{{ item }}</div>
                  <div class="benefit">
                     <img src="/static/images/01_icon_sale.png" width=28px height=15px>
-                    <div class"benefit-price">{{ item.price }}</div>
                  </div>
               </div>
            </div>
