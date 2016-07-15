@@ -11,16 +11,16 @@
 {% block content %}
   <div id="recommendation-select-method" class="row">
     <div class="method-list">
-      <a href="{{ url_for('.usage_pattern') }}" class="method">
-        <div class="wrapper">
-          <img class="icon" src="{{ url_for('static', filename='images/method-usage-pattern.png') }}">
-          <div class="name">소비유형별</div>
-        </div>
-      </a>
       <a href="{{ url_for('.benefit') }}" class="method">
         <div class="wrapper">
           <img class="icon" src="{{ url_for('static', filename='images/method-benefit.png') }}">
-          <div class="name">혜택별</div>
+          <div class="name">소비 유형별</div>
+        </div>
+      </a>
+      <a href="{{ url_for('.usage_pattern') }}" class="method">
+        <div class="wrapper">
+          <img class="icon" src="{{ url_for('static', filename='images/method-usage-pattern.png') }}">
+          <div class="name">가계부 패턴별</div>
         </div>
       </a>
     </div>

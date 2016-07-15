@@ -1,7 +1,9 @@
 {% extends 'base.html' %}
 {% block nav %}
   <div id="toolbar">
-    <img id="toolbar-menu-toggle" class="pull-left" src="{{ url_for('static', filename='images/toolbar-menu.png') }}">
+    <a href="{{ url_for('recommendation.index') }}">
+      <img id="toolbar-menu-toggle" class="pull-left" src="{{ url_for('static', filename='images/toolbar-menu.png') }}">
+    </a>
     <div id="toolbar-title" class="pull-left">
       {% block toolbar_title %}
         체리 카드
