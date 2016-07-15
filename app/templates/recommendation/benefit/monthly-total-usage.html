@@ -10,31 +10,56 @@
 {% endblock %}
 {% block content %}
   <div id="recommendation-benefit-monthly-total-usage">
-    <div class="money-wrapper row">
-      <div class="col-xs-12">
-        월 <div class="money"></div> 원
+    <form action="{{ url_for('.benefit_select_category') }}">
+      <div class="money-wrapper row">
+        <div class="col-xs-12">
+          월 <div class="money"></div> 원
+        </div>
       </div>
-    </div>
-    <div class="row">
-      <div class="col-xs-12">
-        <input class="money-picker" type="range" name="ff" value="100000" min="100000" max="5000000" step="10000">
+      <div class="row">
+        <div class="col-xs-12">
+          <input class="money-picker" type="range" name="monthly-total-usage" value="100000" min="100000" max="5000000" step="10000">
+        </div>
       </div>
-    </div>
-    <div class="row">
-      <div class="col-xs-6 text-left">
-        10만원
+      <div class="row">
+        <div class="col-xs-6 text-left">
+          10만원
+        </div>
+        <div class="col-xs-6 text-right">
+          500만원
+        </div>
       </div>
-      <div class="col-xs-6 text-right">
-        500만원
+      <div class="row">
+        <div class="col-xs-12 text-center">
+          <button type="button" class="btn btn-default custom">
+            직접 입력
+          </button>
+        </div>
       </div>
-    </div>
+    </form>
   </div>
   <script>
     $(function () {
       var $recommendation = $('#recommendation-benefit-monthly-total-usage');
+
       $recommendation.find('.money-picker').on('input', function () {
         $recommendation.find('.money').text($(this).val().replace(/\B(?=(\d{3})+(?!\d))/g, ","));
       }).trigger('input');
+
+      $recommendation.find('.custom').on('click', function () {
+        var value = prompt('월 평균 이용 대금을 입력해주세요.');
+
+        if (!$.isNumeric(value) || value < 100000) {
+          alert('10만원 이상 입력해주세요.');
+          return;
+        }
+
+        $recommendation.find('[name=monthly-total-usage]').val(value).trigger('input');
+      });
+
+      $('#recommendation').find('.next').on('click', function () {
+        $recommendation.find('form').submit();
+      });
     });
   </script>
 {% endblock %}

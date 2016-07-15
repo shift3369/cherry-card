@@ -1,0 +1,42 @@
+{% extends 'recommendation/base.html' %}
+{% block step %}
+  3
+{% endblock %}
+{% block message %}
+  자주 이용하는 카테고리는 어떤 것들이 있나요?
+{% endblock %}
+{% block hint %}
+  카테고리를 다섯 개 이상 선택해보세요!
+{% endblock %}
+{% block content %}
+  <div id="recommendation-benefit-select-category">
+    <form action="{{ url_for('.usage_of_each_category') }}">
+      <input type="hidden" name="monthly-total-usage" value="{{ monthly_total_usage }}"/>
+      <div class="category-list">
+        {% for category in categories %}
+          {% if loop.index0 % 3 == 0 %}
+            <div class="row">
+          {% endif %}
+          <div class="col-xs-4 text-center category">
+            <div class="category-wrapper">
+              <img src="{{ category['image']['url'] }}">
+              <div class="name">{{ category['name'] }}</div>
+            </div>
+          </div>
+          {% if loop.last or loop.index0 % 3 == 2 %}
+            </div>
+          {% endif %}
+        {% endfor %}
+      </div>
+    </form>
+  </div>
+  <script>
+    $(function () {
+      var $recommendation = $('#recommendation-benefit-select-category');
+
+      $('#recommendation').find('.next').on('click', function () {
+        $recommendation.find('form').submit();
+      });
+    });
+  </script>
+{% endblock %}

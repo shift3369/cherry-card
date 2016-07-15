@@ -4,6 +4,12 @@ html, body {
   font-size: 16px;
 }
 
+.btn {
+  border-radius: 0;
+  padding: 16px 45px;
+  font-size: 1em;
+}
+
 #toolbar {
   position: relative;
   background: $piont;
@@ -114,6 +120,16 @@ html, body {
       }
     }
   }
+  .bottom {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    .next {
+      background: $bgcolor7;
+      color: $white;
+    }
+  }
 }
 
 #recommendation-select-method {
@@ -157,6 +173,28 @@ html, body {
       margin-left: 20px;
       font-size: 1.375em;
       color: $piont;
+    }
+  }
+  .custom {
+    margin-top: 150px;
+  }
+}
+
+#recommendation-benefit-select-category {
+  .category-list {
+    padding-left: 4px;
+    padding-right: 4px;
+    .category {
+      padding: 4px;
+      .category-wrapper {
+        padding: 24px 0 15px;
+        border: 1px solid $gray2;
+        border-radius: 5px;
+        img {
+          width: 45px;
+          height: 45px;
+        }
+      }
     }
   }
 }
