@@ -1,0 +1,32 @@
+{% extends 'compare/base.html' %}
+{% block content %}
+<div id="recommendation-recommendation-result-detail" class="row">
+   <div class="card-info">
+      <div class="info">
+         <div class="image">
+            <img src="/static/images/bg_maincard.png" width=150px>
+         </div>
+         <div class="text-info">
+            <div class="card-name">삼성카드6 </div>
+            <div class="card-desc">일상 곳곳에서 누리는 할인 혜택!
+            택시, 주유소, 커피, 제과, 편의점 할인</div>
+            <div class="annual-fee-wrapper">국내전용 18,000원</div>
+         </div>
+      </div>
+      <div class="button-wrapper">
+         <div class="compare-box">비교함담기</div>
+         <div class="card-select">카드신청</div>
+      </div>
+   </div>
+   <div class="benefit-detail">
+      <div class="nav">혜택정보</div>
+      <div class="content">
+      {% for item in cardbenefits %}
+         <div class="benefit-name">
+         </div>
+         <div class="benefit-info"></div>
+      {% endfor %}
+      </div>
+   </div>
+</div>
+{% endblock %}

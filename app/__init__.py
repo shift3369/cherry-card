@@ -31,9 +31,12 @@ app.config.from_object(os.environ['CHERRY_CARD_CONFIG'])
 db = SQLAlchemy(app)
 db.create_all()
 
-
+from .busket import busket  #noqa
+from .compare import compare  # noqa
 from .recommendation import recommendation  # noqa
 from .routes import app as root  # noqa
 
+app.register_blueprint(busket)
+app.register_blueprint(compare)
 app.register_blueprint(recommendation)
 app.register_blueprint(root)

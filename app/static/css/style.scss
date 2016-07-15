@@ -198,3 +198,159 @@ html, body {
     }
   }
 }
+
+ #recommendation-recommendation-result .slider-nav {
+    padding-top: 31px;
+    height: 280px;
+    background: #3b414d;
+    .hashtag {
+       font-size: 0.85em;
+       color: $white;
+       text-align: center;
+    }
+ }
+ #recommendation-recommendation-result .slider-for {
+    text-align: center;
+
+    .benefit-detail {
+       text-align: center;
+       .total-benefit {
+          display: table-cell;          
+          vertical-align: middle;
+          height: 93px;
+          background: #ffffff; 
+       }
+       .category-list {
+          background: #fafafa;
+          height: 236px;
+          padding-top: 15px;
+          padding-left: 10px;
+          padding-right: 10px;
+          .category-wrapper {
+             display: inline-block;
+             text-align: center; 
+             height: 111px;
+             width: 111px;
+             background-image: url("../images/01_bg_info.png");
+             background-repeat: no-repeat;
+             background-size: cover; 
+          }
+       }
+       .more-benefit {
+          text-align: right;
+          background: #ddddcd;
+          height: 40px;
+          padding-top: 9px;
+          padding-right: 19px;
+          margin-bottom: 9px;
+       }
+       .bottom-button {
+          display: inline-block;
+          padding-left: 7px;
+          .compare-box {
+             background: #d63516;
+             height: 54px;
+             width: 170px;
+             display: table-cell;
+             vertical-align: middle;
+             color: #ffffff;
+          }
+          .card-select {
+             background: #d63516;
+             height: 54px;
+             width: 170px;
+             display: table-cell;
+             vertical-align: middle;
+             color: #ffffff;
+          }
+       }
+    }
+ }
+
+#recommendation-recommendation-result-detail {
+   .card-info {
+      background: #3b414d;
+      padding-top: 23px;
+      .info {
+      margin-bottom: 5px;
+         .image {
+         }
+         .text-info {
+            padding-top: 10px;
+            .card-name {
+               color: $white;
+            }
+            .card-desc {
+               color: $white;
+            }
+            .annual-fee-wrapper {
+               color: $white;
+            }
+         }
+      }
+      .button-wrapper {
+         padding-left: 14px;
+         .compare-box {
+             background: #d63516;
+             height: 54px;
+             width: 170px;
+             display: table-cell;
+             vertical-align: middle;
+             color: #ffffff;
+          }
+          .card-select {
+             background: #d63516;
+             height: 54px;
+             width: 170px;
+             display: table-cell;
+             vertical-align: middle;
+             color: #ffffff;
+          }   
+      }
+   }
+   .benefit-detail {
+   }
+} 
+#compare-card-compare {
+  text-align: center; }
+  #compare-card-compare .wrapper1 {
+    text-align: center;
+    background: #fafafa;
+    margin-bottom: -80px;
+    padding-bottom: 113px;
+    padding-top: 28px; }
+    #compare-card-compare .wrapper1 .card1 {
+      text-align: center;
+      display: inline-block;
+      width: 262px;
+      height: 170px;
+      padding-top: 56px;
+      background-image: url("../images/03_bg_comparecard.png");
+      background-repeat: no-repeat;
+      background-size: cover; }
+
+
+  #compare-card-compare .wrapper1 .card1 .icon {
+        margin-bottom: 11px; }
+  #compare-card-compare .wrapper2 {
+    text-align: center;
+    background: #efefef;
+    margin-top: -80px;
+    padding-top: 113px;
+    padding-bottom: 23px; }
+    #compare-card-compare .wrapper2 .card2 {
+      text-align: center;
+      display: inline-block;
+      width: 262px;
+      height: 170px;
+      padding-top: 56px;
+      background-image: url("../images/03_bg_comparecard.png");
+      background-repeat: no-repeat;
+      background-size: cover; }
+      #compare-card-compare .wrapper2 .card2 .icon {
+        margin-bottom: 11px; }
+
+  #compare-card-compare .button {
+    height: 50px;
+    background: #3b414d;
+    color: #ffffff; }
